@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="growwpark_logo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#E8B4B8',
+                        charcoal: '#1A1A1A',
+                        maroon: '#7A1E2C',
+                        purewhite: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth transitions */
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hide scrollbar for nav */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* RTL support */
+        html[dir="rtl"] .ml-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        html[dir="rtl"] .ml-3 {
+            margin-left: 0 !important;
+            margin-right: 0.75rem !important;
+        }
+
+        html[dir="rtl"] .mr-2 {
+            margin-right: 0 !important;
+            margin-left: 0.5rem !important;
+        }
+
+        html[dir="rtl"] .pl-4 {
+            padding-left: 0 !important;
+            padding-right: 1rem !important;
+        }
+
+        /* Sidebar transition */
+        #sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased overflow-x-hidden bg-[#FCF8F8] dark:bg-[#121212] text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+
+    <div id="overlay"
+        class="fixed inset-0 bg-[#1A1A1A]/50 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity duration-300">
+    </div>
+
+    <div class="flex h-screen overflow-hidden relative">
+
+        <aside id="sidebar"
+            class="fixed lg:static inset-y-0 left-0 w-72 flex-shrink-0 bg-[#FFFFFF] dark:bg-[#1A1A1A] shadow-2xl lg:shadow-none flex flex-col h-full border-r border-gray-200 dark:border-gray-800 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+
+            <div class="px-6 pt-8 pb-6 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
+                <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <span
+                        class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+                        Groww<span class="text-[#7A1E2C]">Aroma</span>
+                    </span>
+                </a>
+                <button id="closeSidebarBtn"
+                    class="lg:hidden w-8 h-8 rounded-full flex items-center justify-center bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8]">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="lg:hidden px-6 py-4 flex items-center gap-3 border-b border-gray-100 dark:border-gray-800">
+                <span class="text-sm font-medium text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 mr-2">Settings:</span>
+                <button id="mobileRtlToggle"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8] border border-transparent hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8]">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                <button id="mobileDarkToggle"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8] border border-transparent hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8]">
+                    <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <nav class="mt-4 flex-1 px-4 space-y-2 overflow-y-auto no-scrollbar">
+                <a href="#"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8] border border-[#7A1E2C]/20 dark:border-[#E8B4B8]/20 shadow-sm">
+                    <i class="fas fa-th-large w-6 text-lg"></i>
+                    <span class="ml-3 font-semibold">Dashboard</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 rounded-xl hover:bg-[#FCF8F8] dark:hover:bg-[#2A2A2A] hover:text-[#7A1E2C] dark:hover:text-[#E8B4B8] transition-colors">
+                    <i class="fas fa-shopping-bag w-6 text-lg"></i>
+                    <span class="ml-3">My Orders</span>
+                    <span
+                        class="ml-auto text-xs px-2 py-1 rounded-full bg-[#E8B4B8]/30 dark:bg-[#7A1E2C]/30 text-[#7A1E2C] dark:text-[#E8B4B8] font-bold">2</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 rounded-xl hover:bg-[#FCF8F8] dark:hover:bg-[#2A2A2A] hover:text-[#7A1E2C] dark:hover:text-[#E8B4B8] transition-colors">
+                    <i class="far fa-heart w-6 text-lg"></i>
+                    <span class="ml-3">Wishlist</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 rounded-xl hover:bg-[#FCF8F8] dark:hover:bg-[#2A2A2A] hover:text-[#7A1E2C] dark:hover:text-[#E8B4B8] transition-colors">
+                    <i class="fas fa-award w-6 text-lg"></i>
+                    <span class="ml-3">Scent Club Points</span>
+                </a>
+                <a href="#"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 rounded-xl hover:bg-[#FCF8F8] dark:hover:bg-[#2A2A2A] hover:text-[#7A1E2C] dark:hover:text-[#E8B4B8] transition-colors">
+                    <i class="far fa-user w-6 text-lg"></i>
+                    <span class="ml-3">Account Details</span>
+                </a>
+
+                <div class="border-t border-gray-100 dark:border-gray-800 my-4"></div>
+
+                <a href="login.html"
+                    class="flex items-center px-4 py-3.5 text-sm font-medium text-[#7A1E2C] dark:text-[#E8B4B8] rounded-xl hover:bg-[#FCF8F8] dark:hover:bg-[#2A2A2A] transition-colors">
+                    <i class="fas fa-sign-out-alt w-6"></i>
+                    <span class="ml-3">Log Out</span>
+                </a>
+            </nav>
+
+            <div
+                class="p-5 mt-auto border-t border-gray-100 dark:border-gray-800 flex items-center bg-[#FCF8F8] dark:bg-[#1A1A1A]">
+                <div
+                    class="w-10 h-10 rounded-full bg-[#E8B4B8] dark:bg-[#2A2A2A] flex items-center justify-center text-[#7A1E2C] dark:text-[#FFFFFF] font-serif font-bold border border-[#7A1E2C]/20 dark:border-[#E8B4B8]/20">
+                    R
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF]"> Rose</p>
+                    <p class="text-xs text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50">Scent Club Member</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-y-auto w-full">
+
+            <header
+                class="bg-[#FFFFFF]/90 dark:bg-[#1A1A1A]/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-6 py-4 sticky top-0 z-30 flex items-center justify-between">
+
+                <div>
+                    <h1 class="text-xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF]">User Dashboard</h1>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div class="hidden lg:flex items-center gap-2">
+                        <button id="desktopRtlToggle"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8] border border-transparent hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] transition-colors shadow-sm">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <button id="desktopDarkToggle"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] text-[#7A1E2C] dark:text-[#E8B4B8] border border-transparent hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] transition-colors shadow-sm">
+                            <i id="desktopThemeIcon" class="fas fa-moon"></i>
+                        </button>
+                    </div>
+
+                    <button id="hamburgerBtn"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-[#7A1E2C] text-[#FFFFFF] shadow-md hover:bg-[#5A1620] transition-colors">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="p-6 lg:p-10 space-y-8 max-w-7xl mx-auto w-full">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 flex items-center border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-14 h-14 rounded-full flex items-center justify-center bg-[#E8B4B8]/30 dark:bg-[#7A1E2C]/20 text-[#7A1E2C] dark:text-[#E8B4B8]">
+                            <i class="fas fa-box-open text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-xs uppercase tracking-wider text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mb-1">
+                                Total Orders</p>
+                            <p class="text-2xl font-bold">12</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 flex items-center border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-14 h-14 rounded-full flex items-center justify-center bg-[#E8B4B8]/30 dark:bg-[#7A1E2C]/20 text-[#7A1E2C] dark:text-[#E8B4B8]">
+                            <i class="far fa-heart text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-xs uppercase tracking-wider text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mb-1">
+                                Wishlist</p>
+                            <p class="text-2xl font-bold">5</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 flex items-center border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-14 h-14 rounded-full flex items-center justify-center bg-[#E8B4B8]/30 dark:bg-[#7A1E2C]/20 text-[#7A1E2C] dark:text-[#E8B4B8]">
+                            <i class="fas fa-star text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-xs uppercase tracking-wider text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mb-1">
+                                Club Points</p>
+                            <p class="text-2xl font-bold">450</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 flex items-center border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="w-14 h-14 rounded-full flex items-center justify-center bg-[#E8B4B8]/30 dark:bg-[#7A1E2C]/20 text-[#7A1E2C] dark:text-[#E8B4B8]">
+                            <i class="fas fa-gift text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-xs uppercase tracking-wider text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mb-1">
+                                Rewards</p>
+                            <p class="text-xl font-bold text-[#7A1E2C] dark:text-[#E8B4B8]">1 Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                    <div
+                        class="lg:col-span-2 bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-lg font-serif font-bold">Recent Orders</h2>
+                            <a href="#"
+                                class="text-sm font-medium text-[#7A1E2C] dark:text-[#E8B4B8] hover:underline">View
+                                All</a>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-gray-100 dark:border-gray-800">
+                                <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                                    <div
+                                        class="w-16 h-16 rounded-xl overflow-hidden bg-[#FCF8F8] dark:bg-[#2A2A2A] flex items-center justify-center flex-shrink-0">
+                                        <img src="images\img5.avif"
+                                            class="h-full object-contain mix-blend-multiply dark:mix-blend-normal">
+                                    </div>
+                                    <div>
+                                        <p class="font-serif font-bold text-base">Midnight Amber Extrait</p>
+                                        <p class="text-xs text-[#1A1A1A]/60 dark:text-[#FFFFFF]/60 mt-1">Order #SA-8492
+                                            · Placed Oct 12</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between sm:flex-col sm:items-end gap-2">
+                                    <span
+                                        class="text-xs font-bold px-3 py-1 rounded-full bg-[#E8B4B8]/20 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] border border-[#7A1E2C]/20">In
+                                        Transit</span>
+                                    <span class="font-medium">$210.00</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                                <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                                    <div
+                                        class="w-16 h-16 rounded-xl overflow-hidden bg-[#FCF8F8] dark:bg-[#2A2A2A] flex items-center justify-center flex-shrink-0">
+                                        <img src="images\img8.avif"
+                                            class="h-full object-contain mix-blend-multiply dark:mix-blend-normal">
+                                    </div>
+                                    <div>
+                                        <p class="font-serif font-bold text-base">Sicilian Citrus EDT</p>
+                                        <p class="text-xs text-[#1A1A1A]/60 dark:text-[#FFFFFF]/60 mt-1">Order #SA-7211
+                                            · Placed Aug 04</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between sm:flex-col sm:items-end gap-2">
+                                    <span
+                                        class="text-xs font-bold px-3 py-1 rounded-full bg-gray-100 text-gray-600 dark:bg-[#2A2A2A] dark:text-gray-300">Delivered</span>
+                                    <span class="font-medium">$95.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden flex flex-col">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-[#E8B4B8]/20 dark:bg-[#7A1E2C]/20 rounded-bl-full -z-10">
+                        </div>
+
+                        <h2 class="text-lg font-serif font-bold mb-2">Your Scent Profile</h2>
+                        <p class="text-sm text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 mb-6">Based on your recent purchases
+                            and quiz results, you lean towards:</p>
+
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1 font-medium">
+                                    <span>Woody / Earthy</span>
+                                    <span class="text-[#7A1E2C] dark:text-[#E8B4B8]">65%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-100 dark:bg-[#2A2A2A] rounded-full overflow-hidden">
+                                    <div class="h-full bg-[#7A1E2C] dark:bg-[#E8B4B8] rounded-full" style="width: 65%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1 font-medium">
+                                    <span>Spicy / Oriental</span>
+                                    <span class="text-[#7A1E2C] dark:text-[#E8B4B8]">25%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-100 dark:bg-[#2A2A2A] rounded-full overflow-hidden">
+                                    <div class="h-full bg-[#7A1E2C] dark:bg-[#E8B4B8] rounded-full opacity-70"
+                                        style="width: 25%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1 font-medium">
+                                    <span>Fresh / Citrus</span>
+                                    <span class="text-[#7A1E2C] dark:text-[#E8B4B8]">10%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-100 dark:bg-[#2A2A2A] rounded-full overflow-hidden">
+                                    <div class="h-full bg-[#7A1E2C] dark:bg-[#E8B4B8] rounded-full opacity-40"
+                                        style="width: 10%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="mt-auto w-full py-3 rounded-xl border border-[#7A1E2C] text-[#7A1E2C] dark:border-[#E8B4B8] dark:text-[#1A1A1A] dark:bg-[#E8B4B8] hover:bg-[#7A1E2C] hover:text-[#FFFFFF] transition-colors font-medium text-sm">
+                            Retake Scent Quiz
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                    <h2 class="text-lg font-serif font-bold mb-6">Curated For You</h2>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] group cursor-pointer hover:shadow-md transition-shadow border border-transparent hover:border-[#7A1E2C]/20 dark:hover:border-[#E8B4B8]/20">
+                            <div
+                                class="w-20 h-20 rounded-lg bg-white dark:bg-[#1A1A1A] flex items-center justify-center p-2 flex-shrink-0">
+                                <img src="images\img1.webp"
+                                    class="h-full object-contain group-hover:scale-110 transition-transform">
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-sm">Velvet Rose & Oud</h3>
+                                <p class="text-xs text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mt-1 mb-2">98% Match</p>
+                                <p class="text-sm font-medium text-[#7A1E2C] dark:text-[#E8B4B8]">$145.00</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] group cursor-pointer hover:shadow-md transition-shadow border border-transparent hover:border-[#7A1E2C]/20 dark:hover:border-[#E8B4B8]/20">
+                            <div
+                                class="w-20 h-20 rounded-lg bg-white dark:bg-[#1A1A1A] flex items-center justify-center p-2 flex-shrink-0">
+                                <img src="images\img3.avif"
+                                    class="h-full object-contain group-hover:scale-110 transition-transform">
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-sm">Vanilla Smoke</h3>
+                                <p class="text-xs text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 mt-1 mb-2">85% Match</p>
+                                <p class="text-sm font-medium text-[#7A1E2C] dark:text-[#E8B4B8]">$190.00</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="hidden lg:flex items-center justify-center p-4 rounded-xl bg-[#7A1E2C] text-[#FFFFFF] relative overflow-hidden group cursor-pointer">
+                            <div
+                                class="absolute inset-0 bg-[#5A1620] translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            </div>
+                            <div class="relative z-10 text-center">
+                                <i class="fas fa-gift text-2xl mb-2 text-[#E8B4B8]"></i>
+                                <h3 class="font-serif font-bold">Redeem Points</h3>
+                                <p class="text-xs text-[#FFFFFF]/80 mt-1">Get $20 off your next order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /* ===============================
+           SIDEBAR, THEME & RTL LOGIC
+        ================================ */
+        const htmlElement = document.documentElement;
+
+        // Desktop Buttons
+        const desktopThemeBtn = document.getElementById("desktopDarkToggle");
+        const desktopThemeIcon = document.getElementById("desktopThemeIcon");
+        const desktopRtlBtn = document.getElementById("desktopRtlToggle");
+
+        // Mobile Buttons
+        const mobileThemeBtn = document.getElementById("mobileDarkToggle");
+        const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+        const mobileRtlBtn = document.getElementById("mobileRtlToggle");
+
+        // Sidebar Elements
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+        /* --- Theme Handling --- */
+        function applyTheme() {
+            let theme = localStorage.getItem('theme');
+            if (theme !== 'dark' && theme !== 'light') theme = 'light';
+
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-sun transition-transform rotate-180';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun transition-transform rotate-180';
+            } else {
+                htmlElement.classList.remove('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-moon transition-transform rotate-0';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon transition-transform rotate-0';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            applyTheme();
+        }
+
+        if (desktopThemeBtn) desktopThemeBtn.addEventListener('click', toggleTheme);
+        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+        /* --- RTL Handling --- */
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            localStorage.setItem("scentAuraRTL", newDir);
+        }
+
+        if (desktopRtlBtn) desktopRtlBtn.addEventListener('click', toggleRTL);
+        if (mobileRtlBtn) mobileRtlBtn.addEventListener('click', toggleRTL);
+
+        /* --- Sidebar Handling (Mobile) --- */
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            // Small timeout to allow display:block to apply before fading in opacity
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+        }
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
+        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+
+        /* --- Initialize --- */
+        applyTheme();
+        const savedRTL = localStorage.getItem("scentAuraRTL");
+        if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
+
+    </script>
+</body>
+
+</html>
