@@ -7,9 +7,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">     
-       <link rel="icon" href="growwpark_logo.jpg">
-
-
+  <link rel="icon" href="growwpark_logo.jpg">
 
   <script>
     tailwind.config = {
@@ -37,10 +35,6 @@
     html[dir="rtl"] .lg\:flex-row {
       flex-direction: row-reverse;
     }
-    html[dir="rtl"] .right-4 {
-      right: auto;
-      left: 1rem;
-    }
 
     /* Hide promotional side on smaller screens */
     @media (max-width: 1023px) {
@@ -48,37 +42,101 @@
         display: none !important;
       }
     }
+
+    /* Ensure toggle buttons stay outside the card and fixed position on small screens */
+    .global-toggles {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      display: flex;
+      gap: 0.75rem;
+    }
+    /* If RTL, mirror the toggle bar to the left */
+    html[dir="rtl"] .global-toggles {
+      right: auto;
+      left: 1.5rem;
+    }
+    /* On very small screens, keep them visible but not overlapping content too much */
+    @media (max-width: 640px) {
+      .global-toggles {
+        top: 1rem;
+        right: 1rem;
+      }
+      html[dir="rtl"] .global-toggles {
+        right: auto;
+        left: 1rem;
+      }
+    }
+
+    /* Button style for toggles outside */
+    .toggle-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(122, 30, 44, 0.2);
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    .dark .toggle-btn {
+      background-color: #2A2A2A;
+      border-color: rgba(232, 180, 184, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .toggle-btn:hover {
+      border-color: #7A1E2C;
+      transform: translateY(-2px);
+    }
+    .dark .toggle-btn:hover {
+      border-color: #E8B4B8;
+    }
+    .toggle-btn i {
+      font-size: 1.1rem;
+      color: #7A1E2C;
+    }
+    .dark .toggle-btn i {
+      color: #E8B4B8;
+    }
+
+    /* minor responsive for logo */
     @media(max-width:420px){
         .logo{
             margin-right: 35px;
-    margin-top: -10px;
+            margin-top: -10px;
         }
     }
   </style>
 </head>
+<body class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF] relative">
 
-<body class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF]">
+  <!-- GLOBAL TOGGLES – placed outside main card, fixed position -->
+  <div class="global-toggles">
+    <button id="rtl-toggle" class="toggle-btn" aria-label="Toggle RTL">
+      <i class="fas fa-exchange-alt"></i>
+    </button>
+    <button id="theme-toggle" class="toggle-btn" aria-label="Toggle theme">
+      <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+  </div>
 
+  <!-- MAIN CARD (no longer contains toggles) -->
   <div id="main-card" class="w-full max-w-5xl rounded-3xl overflow-hidden relative bg-[#FFFFFF] dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col lg:flex-row">
 
-    <div id="control-panel" class="absolute top-4 right-4 z-30 flex items-center gap-2">
-      <button id="rtl-toggle" class="w-10 h-10 flex items-center justify-center bg-[#FFFFFF] dark:bg-[#2A2A2A] border border-[#7A1E2C]/20 dark:border-[#E8B4B8]/20 rounded-full shadow-sm hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] transition-all">
-        <i class="fas fa-exchange-alt text-sm text-[#7A1E2C] dark:text-[#E8B4B8]"></i>
-      </button>
-
-      <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center bg-[#FFFFFF] dark:bg-[#2A2A2A] border border-[#7A1E2C]/20 dark:border-[#E8B4B8]/20 rounded-full shadow-sm hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] transition-all">
-        <i id="theme-icon" class="fas fa-moon text-sm text-[#7A1E2C] dark:text-[#E8B4B8]"></i>
-      </button>
-    </div>
-
+    <!-- left: login panel -->
     <div id="login-panel" class="w-full lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
 
       <div class="logo flex justify-center mb-8">
         <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
-        <span class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
-          Fragora<span class="text-[#7A1E2C]">Aroma</span>
-        </span>
-      </a>
+          <span class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+            Fragora<span class="text-[#7A1E2C]">Aroma</span>
+          </span>
+        </a>
       </div>
 
       <h2 class="text-xl sm:text-2xl text-center font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-2">
@@ -137,17 +195,18 @@
         </div>
 
         <p class="text-center text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 pt-4 text-sm">
-          New to GrowwAroma? 
+          New to FragoraAroma? 
           <a href="signup.html" class="text-[#7A1E2C] dark:text-[#E8B4B8] font-bold hover:underline">Create an account</a>
         </p>
 
       </form>
     </div>
 
+    <!-- right: promotional side -->
     <div class="promo-side w-full lg:w-1/2 relative overflow-hidden flex flex-col justify-end p-10">
       
       <div class="absolute inset-0 z-0">
-        <img src="images\img8.avif" 
+        <img src="images/img8.avif" 
              alt="Luxury Perfume" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/80 to-[#7A1E2C]/40"></div>
@@ -203,6 +262,7 @@
   <script>
     /* ===============================
        THEME & RTL TOGGLE LOGIC
+       (Buttons now outside container)
     ================================ */
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
@@ -218,10 +278,10 @@
       
       if (theme === 'dark') {
         htmlElement.classList.add('dark');
-        themeIcon.className = 'fas fa-sun text-sm text-[#E8B4B8] transition-transform duration-500 rotate-180';
+        themeIcon.className = 'fas fa-sun';  // sun for dark mode (light theme icon)
       } else {
         htmlElement.classList.remove('dark');
-        themeIcon.className = 'fas fa-moon text-sm text-[#7A1E2C] transition-transform duration-500 rotate-0';
+        themeIcon.className = 'fas fa-moon'; // moon for light mode
       }
     }
 
@@ -229,7 +289,12 @@
     themeToggle.addEventListener("click", () => {
       const isDark = htmlElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      applyTheme();
+      // Update icon manually (applyTheme uses localStorage, but we just toggled class)
+      if (isDark) {
+        themeIcon.className = 'fas fa-sun';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+      }
     });
 
     // Toggle RTL Button Click
@@ -241,9 +306,21 @@
     });
 
     // Initialize on load
-    applyTheme();
-    const savedRTL = localStorage.getItem("scentAuraRTL");
-    if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
+    (function init() {
+      // theme
+      let theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        htmlElement.classList.add('dark');
+        themeIcon.className = 'fas fa-sun';
+      } else {
+        htmlElement.classList.remove('dark');
+        themeIcon.className = 'fas fa-moon';
+      }
+      
+      // rtl
+      const savedRTL = localStorage.getItem("scentAuraRTL");
+      if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
+    })();
   </script>
 
 </body>
