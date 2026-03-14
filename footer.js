@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="lg:col-span-1">
       <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
         <span class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
-          Groww<span class="text-[#7A1E2C]">Aroma</span>
+          Fragora<span class="text-[#7A1E2C]">Aroma</span>
         </span>
       </a>
       <p class="mt-4 text-sm text-[#1A1A1A]/80 dark:text-[#FFFFFF]/70 leading-relaxed">
