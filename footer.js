@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="border-t border-[#7A1E2C]/20 dark:border-gray-800">
     <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-sm text-[#1A1A1A]/80 dark:text-[#FFFFFF]/70">
       
-      <p>© ${new Date().getFullYear()} GrowwAroma Fragrances. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} FragoraAroma Fragrances. All rights reserved.</p>
 
       <div class="flex gap-6">
         <a href="#" class="hover:text-[#7A1E2C] dark:hover:text-[#7A1E2C] transition-colors cursor-pointer">Privacy Policy</a>
