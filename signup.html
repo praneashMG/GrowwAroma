@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="growwpark_logo.jpg">
+  <link rel="icon" href="images\logo2.jpg">
 
   <script>
     tailwind.config = {
@@ -52,19 +53,20 @@
       display: flex;
       gap: 0.75rem;
     }
-    
+
     /* If RTL, mirror the toggle bar to the left */
     html[dir="rtl"] .global-toggles {
       right: auto;
       left: 1.5rem;
     }
-    
+
     /* On very small screens, keep them visible */
     @media (max-width: 640px) {
       .global-toggles {
         top: 1rem;
         right: 1rem;
       }
+
       html[dir="rtl"] .global-toggles {
         right: auto;
         left: 1rem;
@@ -86,36 +88,42 @@
       backdrop-filter: blur(4px);
       background-color: rgba(255, 255, 255, 0.9);
     }
+
     .dark .toggle-btn {
       background-color: #2A2A2A;
       border-color: rgba(232, 180, 184, 0.2);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
+
     .toggle-btn:hover {
       border-color: #7A1E2C;
       transform: translateY(-2px);
     }
+
     .dark .toggle-btn:hover {
       border-color: #E8B4B8;
     }
+
     .toggle-btn i {
       font-size: 1.1rem;
       color: #7A1E2C;
     }
+
     .dark .toggle-btn i {
       color: #E8B4B8;
     }
 
-    @media(max-width:420px){
-      .logo{
-        margin-right: 35px;
-        margin-top: -10px;
+    /* minor responsive for logo */
+    @media(max-width:360px) {
+      #main-card {
+        margin-top: 50px;
       }
     }
   </style>
 </head>
 
-<body class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF] relative">
+<body
+  class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF] relative font-serif">
 
   <!-- GLOBAL TOGGLES – placed outside main card, fixed position -->
   <div class="global-toggles">
@@ -128,125 +136,128 @@
   </div>
 
   <!-- MAIN CARD (no longer contains toggles) -->
-  <div id="main-card" class="w-full max-w-5xl rounded-3xl overflow-hidden relative bg-[#FFFFFF] dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col lg:flex-row">
+  <div id="main-card"
+    class="w-full max-w-5xl rounded-3xl overflow-hidden relative bg-[#FFFFFF] dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col lg:flex-row">
 
     <!-- left: signup panel -->
-<div id="login-panel" class="w-full lg:w-1/2 p-6 sm:p-8 flex flex-col justify-center">
+    <div id="login-panel" class="w-full lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
       <div class="logo flex justify-center mb-6">
         <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
-          <span class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
-            Fragora<span class="text-[#7A1E2C]">Aroma</span>
+          <span
+            class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+            Fragora<span class="text-[#7A1E2C] dark:text-[#E8B4B8]">Aroma</span>
           </span>
         </a>
       </div>
 
-      <h2 class="text-2xl sm:text-2xl text-center font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-8">
+      <h2 class="text-xl sm:text-xl text-center font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-8">
         Join The Aroma Club
       </h2>
-<form class="space-y-2">        
+      <form class="space-y-4">
 
-  <div>
-    <label class="text-xs font-medium mb-1 flex items-center gap-2 opacity-80">
-      <i class="far fa-user text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Full Name
-    </label>
-    <input type="text" placeholder="Eleanor Rose"
-           class="w-full px-3 py-2 text-sm border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
-  </div>
+        <div>
+          <label class="text-sm font-medium mb-1 flex items-center gap-2 opacity-80">
+            <i class="far fa-user text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Full Name
+          </label>
+          <input type="text" placeholder="Eleanor Rose"
+            class="w-full px-3 py-2 text-base border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
+        </div>
 
-  <div>
-    <label class="text-xs font-medium mb-1 flex items-center gap-2 opacity-80">
-      <i class="far fa-envelope text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Email Address
-    </label>
-    <input type="email" placeholder="eleanor@example.com"
-           class="w-full px-3 py-2 text-sm border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
-  </div>
+        <div>
+          <label class="text-sm font-medium mb-1 flex items-center gap-2 opacity-80">
+            <i class="far fa-envelope text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Email Address
+          </label>
+          <input type="email" placeholder="eleanor@example.com"
+            class="w-full px-3 py-2 text-base border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
+        </div>
 
-  <div>
-    <label class="text-xs font-medium mb-1 flex items-center gap-2 opacity-80">
-      <i class="fas fa-lock text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Password
-    </label>
-    <input type="password" placeholder="••••••••"
-           class="w-full px-3 py-2 text-sm border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
-  </div>
+        <div>
+          <label class="text-sm font-medium mb-1 flex items-center gap-2 opacity-80">
+            <i class="fas fa-lock text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Password
+          </label>
+          <input type="password" placeholder="••••••••"
+            class="w-full px-3 py-2 text-base border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
+        </div>
 
-  <div>
-    <label class="text-xs font-medium mb-1 flex items-center gap-2 opacity-80">
-      <i class="fas fa-lock text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Confirm Password
-    </label>
-    <input type="password" placeholder="••••••••"
-           class="w-full px-3 py-2 text-sm border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
-  </div>
+        <div>
+          <label class="text-sm font-medium mb-1 flex items-center gap-2 opacity-80">
+            <i class="fas fa-lock text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Confirm Password
+          </label>
+          <input type="password" placeholder="••••••••"
+            class="w-full px-3 py-2 text-base border rounded-lg bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] shadow-inner">
+        </div>
 
-  <div class="flex items-start gap-2 text-xs mt-1">
-    <input type="checkbox" class="w-3.5 h-3.5 mt-0.5 accent-[#7A1E2C] cursor-pointer">
-    <label class="opacity-70 leading-tight">
-      I agree to the 
-      <a href="#" class="font-bold text-[#7A1E2C]">Terms</a> & 
-      <a href="#" class="font-bold text-[#7A1E2C]">Privacy</a>
-    </label>
-  </div>
+        <div class="flex items-start gap-2 text-sm mt-1">
+          <input type="checkbox" class="w-3.5 h-3.5 mt-0.5 accent-[#7A1E2C] cursor-pointer">
+          <label class="opacity-70 leading-tight">
+            I agree to the
+            <a href="#" class="font-bold text-[#7A1E2C]">Terms</a> &
+            <a href="#" class="font-bold text-[#7A1E2C]">Privacy</a>
+          </label>
+        </div>
 
-  <button class="w-full bg-[#7A1E2C] text-white py-2.5 rounded-lg text-sm font-semibold shadow-md hover:bg-[#5A1620] transition mt-3">
-    Create Account
-  </button>
+        <button
+          class="w-full bg-[#7A1E2C] text-white py-2.5 rounded-lg text-base font-semibold shadow-md hover:bg-[#5A1620] transition mt-3">
+          Create Account
+        </button>
 
-  <div class="relative my-6">
-    <div class="border-t border-gray-200 dark:border-gray-700"></div>
-  <div class="relative my-6">
-  <div class="border-t border-gray-200 dark:border-gray-700"></div>
+        <div class="relative my-8">
+          <div class="border-t border-gray-200 dark:border-gray-700"></div>
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -top-3 bg-white dark:bg-[#1A1A1A] px-6 text-sm opacity-50 font-bold">
+            or continue
+          </span>
+        </div>
 
-  <span class="absolute left-1/2 -translate-x-1/2 -top-3 bg-white dark:bg-[#1A1A1A] px-3 text-xs opacity-50">
-    or register with
-  </span>
-</div>
-  </div>
+        <div class="flex gap-4">
 
-<div class="flex gap-3">
-  
-  <!-- Google -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-google"></i> Google
-  </button>
+          <!-- Google -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-google"></i> Google
+          </button>
 
-  <!-- Apple -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-apple"></i> Apple
-  </button>
+          <!-- Apple -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-apple"></i> Apple
+          </button>
 
-  <!-- Facebook -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-facebook-f"></i> Facebook
-  </button>
+          <!-- Facebook -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </button>
 
-</div>
+        </div>
 
-  <p class="text-center text-xs opacity-70 pt-2">
-    Already have account?
-    <a href="login.html" class="font-bold text-[#7A1E2C]">Login</a>
-  </p>
+        <p class="text-center text-xs opacity-70 pt-6">
+          Already have account?
+          <a href="login.html" class="font-bold text-[#7A1E2C]">Login</a>
+        </p>
 
-</form>
+      </form>
     </div>
 
     <!-- right: promotional side -->
     <div class="promo-side w-full lg:w-1/2 relative overflow-hidden flex flex-col justify-center p-6 lg:p-8">
-      
+
       <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=1000&auto=format&fit=crop" 
-             alt="Luxury Perfume Ingredients" 
-             class="w-full h-full object-cover">
+        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=1000&auto=format&fit=crop"
+          alt="Luxury Perfume Ingredients" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-tr from-[#1A1A1A] via-[#1A1A1A]/80 to-[#7A1E2C]/50"></div>
       </div>
 
       <div class="relative z-10 text-[#FFFFFF]">
-        
-        <div class="inline-block px-4 py-1.5 rounded-full border border-[#E8B4B8]/40 bg-[#1A1A1A]/50 backdrop-blur-md mb-6">
+
+        <div
+          class="inline-block px-4 py-1.5 rounded-full border border-[#E8B4B8]/40 bg-[#1A1A1A]/50 backdrop-blur-md mb-6">
           <span class="text-xs font-semibold tracking-widest uppercase text-[#E8B4B8]">
             <i class="fas fa-leaf mr-2"></i>Curated Ingredients
           </span>
         </div>
 
-<h3 class="text-3xl md:text-4xl font-serif font-bold mb-4 leading-tight">          Find the scent that <br>defines you.
+        <h3 class="text-2xl md:text-3xl font-serif font-bold mb-4 leading-tight"> Find the scent that <br>defines you.
         </h3>
 
         <div class="space-y-4 text-sm md:text-base mb-10 text-[#FFFFFF]/90">
@@ -268,7 +279,8 @@
           </p>
         </div>
 
-        <div class="bg-[#FFFFFF]/10 backdrop-blur-md inline-flex items-center px-6 py-3 rounded-xl border border-[#FFFFFF]/20">
+        <div
+          class="bg-[#FFFFFF]/10 backdrop-blur-md inline-flex items-center px-6 py-3 rounded-xl border border-[#FFFFFF]/20">
           <i class="fas fa-award text-[#E8B4B8] text-2xl mr-4"></i>
           <div>
             <p class="text-sm font-semibold">Premium Member Benefits</p>
@@ -297,7 +309,7 @@
       if (theme !== 'dark' && theme !== 'light') {
         theme = 'light'; // Default to light
       }
-      
+
       if (theme === 'dark') {
         htmlElement.classList.add('dark');
         themeIcon.className = 'fas fa-sun';
@@ -338,7 +350,7 @@
         htmlElement.classList.remove('dark');
         themeIcon.className = 'fas fa-moon';
       }
-      
+
       // rtl
       const savedRTL = localStorage.getItem("scentAuraRTL");
       if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
@@ -346,4 +358,5 @@
   </script>
 
 </body>
+
 </html>

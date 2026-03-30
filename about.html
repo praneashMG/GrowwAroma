@@ -6,13 +6,28 @@
     <title>About-FragoraAroma</title>
      <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-          <link rel="icon" href="growwpark_logo.jpg">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
+          <link rel="icon" href="images\logo2.jpg">
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-                     <script>
+   <script>
     tailwind.config = {
       darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#7A1E2C',
+              light: '#E8B4B8',
+              hover: '#5A1620'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
     };
   </script>
   <style>
@@ -47,11 +62,11 @@
             <span class="text-[#E8B4B8] font-semibold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block">
               Our Heritage
             </span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FFFFFF] leading-tight mb-6">
+            <h1 class="text-5xl md:text-6xl lg:text-8xl font-serif font-semibold text-[#FFFFFF] leading-tight mb-8">
               The Art of <br>
               <span class="text-[#E8B4B8] italic pr-2">Fine Perfumery</span>
             </h1>
-            <p class="text-lg text-[#FFFFFF]/80 max-w-xl leading-relaxed mb-8">
+            <p class="text-xl text-[#FFFFFF]/80 max-w-2xl leading-relaxed mb-10">
               We are a modern fragrance house dedicated to preserving the ancient art of perfumery. We craft evocative, timeless scents that capture the essence of unforgettable moments.
             </p>
           </div>
@@ -85,6 +100,7 @@
         </div>
       </div>
     </section>
+    
 
     <section class="py-24 bg-[#FFFFFF] dark:bg-[#181818] transition-colors duration-500">
       <div class="container mx-auto px-6 lg:px-16">
@@ -98,19 +114,19 @@
           </div>
 
           <div>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] leading-tight mb-6 transition-colors duration-500">
+            <h2 class="text-4xl md:text-5xl font-serif font-semibold text-[#7A1E2C] dark:text-[#FFFFFF] leading-tight mb-8 transition-colors duration-500">
               A Symphony of <br>Senses & Memories
             </h2>
-            <p class="text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed mb-6 transition-colors duration-500">
+            <p class="text-lg text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed mb-6 transition-colors duration-500">
               Founded with a vision to redefine luxury fragrance, ScentAura believes that perfume is the most intimate accessory. It is an invisible garment that speaks before you do and lingers long after you are gone.
             </p>
-            <p class="text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed mb-8 transition-colors duration-500">
+            <p class="text-lg text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed mb-10 transition-colors duration-500">
               Our master perfumers reject the mass-market approach. Instead, we embrace the slow, meticulous process of traditional French perfumery, blending rare botanicals and precious oils to create complex narratives on the skin.
             </p>
 
             <div class="grid sm:grid-cols-2 gap-6 border-t border-gray-100 dark:border-gray-800 pt-8 transition-colors duration-500">
               <div class="flex items-start gap-4">
-                <i class="fas fa-flask text-[#7A1E2C] dark:text-[#E8B4B8] text-xl mt-1"></i>
+                <i class="fas fa-flask text-[#7A1E2C] dark:text-[#E8B4B8] text-2xl mt-1"></i>
                 <div>
                   <h4 class="font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-1 transition-colors duration-500">
                     Clean Blending
@@ -121,7 +137,7 @@
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <i class="fas fa-leaf text-[#7A1E2C] dark:text-[#E8B4B8] text-xl mt-1"></i>
+                <i class="fas fa-leaf text-[#7A1E2C] dark:text-[#E8B4B8] text-2xl mt-1"></i>
                 <div>
                   <h4 class="font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-1 transition-colors duration-500">
                      Formulations
@@ -137,28 +153,52 @@
         </div>
       </div>
     </section>
+        <section class="py-20 bg-[#7A1E2C] dark:bg-[#1A1A1A] transition-colors duration-500 border-t border-[#FFFFFF]/10 dark:border-gray-800">
+      <div class="container mx-auto px-6 lg:px-16">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div class="p-6">
+            <h3 class="text-4xl md:text-5xl font-serif font-semibold text-[#FFFFFF] mb-2">12</h3>
+            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Signature Scents</p>
+          </div>
+          <div class="p-6 border-t sm:border-t-0 sm:border-l border-[#FFFFFF]/20">
+            <h3 class="text-4xl md:text-5xl font-serif font-semibold text-[#FFFFFF] mb-2">3</h3>
+            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Global Boutiques</p>
+          </div>
+          <div class="p-6 border-t lg:border-t-0 lg:border-l border-[#FFFFFF]/20">
+            <h3 class="text-4xl md:text-5xl font-serif font-semibold text-[#FFFFFF] mb-2">40+</h3>
+            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Rare Ingredients</p>
+          </div>
+          <div class="p-6 border-t sm:border-t-0 sm:border-l border-[#FFFFFF]/20">
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-2">10k+</h3>
+            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Scent Club Members</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <section class="py-24 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500">
       <div class="container mx-auto px-6 lg:px-20">
 
         <div class="text-center max-w-3xl mx-auto mb-20">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold text-[#7A1E2C] dark:text-[#FFFFFF] transition-colors duration-500">
             Treasures of the Earth
           </h2>
-          <p class="mt-4 text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 transition-colors duration-500">
+          <p class="mt-6 text-lg text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 transition-colors duration-500">
             We source our raw materials from the finest harvests around the globe, ensuring unparalleled quality in every drop.
           </p>
         </div>
 
         <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
           <div class="lg:w-1/2 text-center lg:text-left">
-            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
+            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-semibold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
               Grasse, France
             </span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
+            <h3 class="text-3xl md:text-4xl font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
               Centifolia Rose
             </h3>
-            <p class="text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed transition-colors duration-500">
+            <p class="text-lg text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed transition-colors duration-500">
               Harvested by hand at dawn in the fields of Grasse, our rose absolute is renowned for its honeyed, sensual depth. It takes tens of thousands of petals to produce a single ounce of this precious nectar.
             </p>
           </div>
@@ -173,10 +213,10 @@
 
         <div class="flex flex-col lg:flex-row-reverse items-center gap-12 mb-24">
           <div class="lg:w-1/2 text-center lg:text-left">
-            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
+            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-semibold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
               Calabria, Italy
             </span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
               Sparkling Bergamot
             </h3>
             <p class="text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed transition-colors duration-500">
@@ -194,10 +234,10 @@
 
         <div class="flex flex-col lg:flex-row items-center gap-12">
           <div class="lg:w-1/2 text-center lg:text-left">
-            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
+            <span class="inline-block mb-4 px-4 py-1 text-[10px] font-semibold uppercase tracking-widest bg-[#E8B4B8]/30 text-[#7A1E2C] dark:bg-[#7A1E2C]/30 dark:text-[#E8B4B8] rounded-full transition-colors duration-500">
               Assam, India
             </span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-4 transition-colors duration-500">
               Agarwood (Oud)
             </h3>
             <p class="text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 leading-relaxed transition-colors duration-500">
@@ -220,10 +260,10 @@
       <div class="container mx-auto px-6 lg:px-20">
 
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold text-[#7A1E2C] dark:text-[#FFFFFF] transition-colors duration-500">
             Conscious Luxury
           </h2>
-          <p class="mt-4 text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 transition-colors duration-500">
+          <p class="mt-6 text-lg text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 transition-colors duration-500">
             We believe that true luxury does not compromise the earth.
           </p>
         </div>
@@ -233,7 +273,7 @@
             <div class="w-48 h-48 rounded-full border-4 border-[#7A1E2C] dark:border-[#E8B4B8] flex items-center justify-center p-2 transition-colors duration-500">
               <div class="w-full h-full rounded-full border border-[#7A1E2C]/30 dark:border-[#E8B4B8]/30 flex items-center justify-center flex-col text-center p-4">
                 <i class="fas fa-dove text-[#7A1E2C] dark:text-[#E8B4B8] text-2xl mb-2 transition-colors duration-500"></i>
-                <span class="font-serif font-bold text-[#1A1A1A] dark:text-[#FFFFFF] text-sm uppercase tracking-widest transition-colors duration-500">Cruelty<br>Free</span>
+                <span class="font-serif font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] text-sm uppercase tracking-widest transition-colors duration-500">Cruelty<br>Free</span>
               </div>
             </div>
           </div>
@@ -281,30 +321,7 @@
       </div>
     </section>
 
-    <section class="py-20 bg-[#7A1E2C] dark:bg-[#1A1A1A] transition-colors duration-500 border-t border-[#FFFFFF]/10 dark:border-gray-800">
-      <div class="container mx-auto px-6 lg:px-16">
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div class="p-6">
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-2">12</h3>
-            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Signature Scents</p>
-          </div>
-          <div class="p-6 border-t sm:border-t-0 sm:border-l border-[#FFFFFF]/20">
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-2">3</h3>
-            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Global Boutiques</p>
-          </div>
-          <div class="p-6 border-t lg:border-t-0 lg:border-l border-[#FFFFFF]/20">
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-2">40+</h3>
-            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Rare Ingredients</p>
-          </div>
-          <div class="p-6 border-t sm:border-t-0 sm:border-l border-[#FFFFFF]/20">
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-2">10k+</h3>
-            <p class="text-[#E8B4B8] font-medium tracking-widest uppercase text-xs">Scent Club Members</p>
-          </div>
-        </div>
 
-      </div>
-    </section>
 
     <div id="footer"></div>
 

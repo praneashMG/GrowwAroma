@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | ScentAura Luxury Fragrances</title>
+  <title>Login </title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">     
-  <link rel="icon" href="growwpark_logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="images\logo2.jpg">
 
   <script>
     tailwind.config = {
@@ -52,17 +53,20 @@
       display: flex;
       gap: 0.75rem;
     }
+
     /* If RTL, mirror the toggle bar to the left */
     html[dir="rtl"] .global-toggles {
       right: auto;
       left: 1.5rem;
     }
+
     /* On very small screens, keep them visible but not overlapping content too much */
     @media (max-width: 640px) {
       .global-toggles {
         top: 1rem;
         right: 1rem;
       }
+
       html[dir="rtl"] .global-toggles {
         right: auto;
         left: 1rem;
@@ -84,36 +88,42 @@
       backdrop-filter: blur(4px);
       background-color: rgba(255, 255, 255, 0.9);
     }
+
     .dark .toggle-btn {
       background-color: #2A2A2A;
       border-color: rgba(232, 180, 184, 0.2);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
+
     .toggle-btn:hover {
       border-color: #7A1E2C;
       transform: translateY(-2px);
     }
+
     .dark .toggle-btn:hover {
       border-color: #E8B4B8;
     }
+
     .toggle-btn i {
       font-size: 1.1rem;
       color: #7A1E2C;
     }
+
     .dark .toggle-btn i {
       color: #E8B4B8;
     }
 
     /* minor responsive for logo */
-    @media(max-width:420px){
-        .logo{
-            margin-right: 35px;
-            margin-top: -10px;
-        }
+    @media(max-width:360px) {
+      #main-card {
+        margin-top: 50px;
+      }
     }
   </style>
 </head>
-<body class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF] relative">
+
+<body
+  class="antialiased min-h-screen flex items-center justify-center p-4 bg-[#FCF8F8] dark:bg-[#121212] transition-colors duration-500 text-[#1A1A1A] dark:text-[#FFFFFF] relative font-serif">
 
   <!-- GLOBAL TOGGLES – placed outside main card, fixed position -->
   <div class="global-toggles">
@@ -126,15 +136,17 @@
   </div>
 
   <!-- MAIN CARD (no longer contains toggles) -->
-  <div id="main-card" class="w-full max-w-5xl rounded-3xl overflow-hidden relative bg-[#FFFFFF] dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col lg:flex-row">
+  <div id="main-card"
+    class="w-full max-w-5xl rounded-3xl overflow-hidden relative bg-[#FFFFFF] dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col lg:flex-row">
 
     <!-- left: login panel -->
-    <div id="login-panel" class="w-full lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+    <div id="login-panel" class="w-full lg:w-1/2 p-10 sm:p-14 flex flex-col justify-center">
 
       <div class="logo flex justify-center mb-8">
         <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
-          <span class="text-xl font-serif font-bold tracking-wide text-[#1A1A1A] dark:text-[#FFFFFF] transition-colors duration-500">
-            Fragora<span class="text-[#7A1E2C]">Aroma</span>
+          <span
+            class="text-[#1A1A1A] dark:text-[#FFFFFF] text-xl font-serif font-semibold tracking-wide transition-colors duration-500">
+            Fragora<span class="text-[#7A1E2C] dark:text-[#E8B4B8]">Aroma</span>
           </span>
         </a>
       </div>
@@ -146,14 +158,14 @@
         Sign in to access your curated fragrance collection.
       </p>
 
-      <form class="space-y-4">
-        
+      <form class="space-y-6">
+
         <div>
           <label class="text-[#1A1A1A]/80 dark:text-[#FFFFFF]/80 text-sm font-medium mb-1.5 flex items-center gap-2">
             <i class="far fa-envelope text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Email Address
           </label>
           <input type="email" placeholder="you@example.com"
-                 class="w-full px-4 py-3.5 border rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 text-[#1A1A1A] dark:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] dark:focus:ring-[#E8B4B8] focus:border-transparent transition-all shadow-inner">
+            class="w-full px-4 py-3.5 border rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 text-[#1A1A1A] dark:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] dark:focus:ring-[#E8B4B8] focus:border-transparent transition-all shadow-inner">
         </div>
 
         <div>
@@ -161,7 +173,7 @@
             <i class="fas fa-lock text-[#7A1E2C] dark:text-[#E8B4B8]"></i> Password
           </label>
           <input type="password" placeholder="········"
-                 class="w-full px-4 py-3.5 border rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 text-[#1A1A1A] dark:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] dark:focus:ring-[#E8B4B8] focus:border-transparent transition-all shadow-inner">
+            class="w-full px-4 py-3.5 border rounded-xl bg-[#FCF8F8] dark:bg-[#2A2A2A] border-gray-200 dark:border-gray-700 text-[#1A1A1A] dark:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#7A1E2C] dark:focus:ring-[#E8B4B8] focus:border-transparent transition-all shadow-inner">
         </div>
 
         <div class="flex justify-between items-center text-sm">
@@ -174,39 +186,45 @@
           </a>
         </div>
 
-        <button class="w-full bg-[#7A1E2C] text-[#FFFFFF] py-3.5 rounded-xl font-medium shadow-lg shadow-[#7A1E2C]/20 hover:bg-[#5A1620] hover:-translate-y-0.5 transition-all duration-300 mt-4">
+        <button
+          class="w-full bg-[#7A1E2C] text-[#FFFFFF] py-3.5 rounded-xl font-medium shadow-lg shadow-[#7A1E2C]/20 hover:bg-[#5A1620] hover:-translate-y-0.5 transition-all duration-300 mt-4">
           Sign In
         </button>
 
         <div class="relative my-8">
           <div class="border-t border-gray-200 dark:border-gray-700"></div>
-          <span class="absolute left-1/2 -translate-x-1/2 -top-3 bg-[#FFFFFF] dark:bg-[#1A1A1A] px-4 text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 text-sm font-medium">
-            or continue with
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -top-3 bg-[#FFFFFF] dark:bg-[#1A1A1A] px-4 text-[#1A1A1A]/50 dark:text-[#FFFFFF]/50 text-sm font-medium">
+            or continue
           </span>
         </div>
 
-     <div class="flex gap-3">
-  
-  <!-- Google -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-google"></i> Google
-  </button>
+        <div class="flex gap-3">
 
-  <!-- Apple -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-apple"></i> Apple
-  </button>
+          <!-- Google -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-google"></i> Google
+          </button>
 
-  <!-- Facebook -->
-  <button type="button" class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
-    <i class="fab fa-facebook-f"></i> Facebook
-  </button>
+          <!-- Apple -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-apple"></i> Apple
+          </button>
 
-</div>
+          <!-- Facebook -->
+          <button type="button"
+            class="flex-1 flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:border-[#7A1E2C] dark:hover:border-[#E8B4B8] py-2.5 rounded-xl text-sm text-[#1A1A1A] dark:text-[#FFFFFF] transition group">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </button>
+
+        </div>
 
         <p class="text-center text-[#1A1A1A]/70 dark:text-[#FFFFFF]/70 pt-4 text-sm">
-          New to FragoraAroma? 
-          <a href="signup.html" class="text-[#7A1E2C] dark:text-[#E8B4B8] font-bold hover:underline">Create an account</a>
+          New to FragoraAroma?
+          <a href="signup.html" class="text-[#7A1E2C] dark:text-[#E8B4B8] font-bold hover:underline">Create an
+            account</a>
         </p>
 
       </form>
@@ -214,17 +232,16 @@
 
     <!-- right: promotional side -->
     <div class="promo-side w-full lg:w-1/2 relative overflow-hidden flex flex-col justify-end p-10">
-      
+
       <div class="absolute inset-0 z-0">
-        <img src="images/img8.avif" 
-             alt="Luxury Perfume" 
-             class="w-full h-full object-cover">
+        <img src="images/img8.avif" alt="Luxury Perfume" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/80 to-[#7A1E2C]/40"></div>
       </div>
 
       <div class="relative z-10 text-[#FFFFFF]">
-        
-        <div class="inline-block px-4 py-1.5 rounded-full border border-[#E8B4B8]/40 bg-[#1A1A1A]/50 backdrop-blur-md mb-6">
+
+        <div
+          class="inline-block px-4 py-1.5 rounded-full border border-[#E8B4B8]/40 bg-[#1A1A1A]/50 backdrop-blur-md mb-6">
           <span class="text-xs font-semibold tracking-widest uppercase text-[#E8B4B8]">
             <i class="fas fa-crown mr-2"></i>The Scent Club
           </span>
@@ -253,7 +270,8 @@
           </p>
         </div>
 
-        <div class="bg-[#FFFFFF]/10 backdrop-blur-md inline-flex items-center px-6 py-3 rounded-full border border-[#FFFFFF]/20">
+        <div
+          class="bg-[#FFFFFF]/10 backdrop-blur-md inline-flex items-center px-6 py-3 rounded-full border border-[#FFFFFF]/20">
           <div class="flex text-[#E8B4B8] text-sm mr-3">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -285,7 +303,7 @@
       if (theme !== 'dark' && theme !== 'light') {
         theme = 'light';
       }
-      
+
       if (theme === 'dark') {
         htmlElement.classList.add('dark');
         themeIcon.className = 'fas fa-sun';  // sun for dark mode (light theme icon)
@@ -326,7 +344,7 @@
         htmlElement.classList.remove('dark');
         themeIcon.className = 'fas fa-moon';
       }
-      
+
       // rtl
       const savedRTL = localStorage.getItem("scentAuraRTL");
       if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
@@ -334,4 +352,5 @@
   </script>
 
 </body>
+
 </html>

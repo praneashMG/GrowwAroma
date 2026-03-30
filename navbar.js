@@ -44,113 +44,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navbar.innerHTML = `
 <nav class="fixed top-0 left-0 w-full z-50 bg-[#E8B4B8] dark:bg-[#1A1A1A] shadow-md transition-colors duration-500">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-16">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between h-20">
 
       <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
-        <span class="text-[#1A1A1A] dark:text-[#FFFFFF] text-xl font-serif font-bold tracking-wide transition-colors duration-500">
-          Fragora<span class="text-[#7A1E2C] dark:text-[#7A1E2C]">Aroma</span>
+        <span class="text-[#1A1A1A] dark:text-[#FFFFFF] text-xl font-serif font-semibold tracking-wide transition-colors duration-500">
+          Fragora<span class="text-[#7A1E2C] dark:text-[#E8B4B8]">Aroma</span>
         </span>
       </a>
 
-      <div class="hidden xl:flex flex-1 justify-center space-x-6 rtl:space-x-reverse items-center font-medium">
+      <div class="hidden xl:flex flex-1 justify-center space-x-8 rtl:space-x-reverse items-center font-medium ">
         <div class="relative">
-          <button id="homeBtn" class="flex items-center space-x-1 text-[#1A1A1A] dark:text-[#FFFFFF] px-3 py-2 rounded-lg hover:text-[#7A1E2C] dark:hover:text-[#7A1E2C] transition-colors">
+          <button id="homeBtn" class="flex items-center space-x-1 text-[#1A1A1A] dark:text-[#FFFFFF] px-3 py-2 rounded-lg hover:text-[#7A1E2C] dark:hover:text-[#7A1E2C] transition-colors font-serif text-base">
             Home <i class="fas fa-chevron-down text-xs ml-1"></i>
           </button>
-          <div id="homeMenu" class="hidden absolute mt-2 w-48 bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 transition-colors duration-300">
-            <a href="index.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C]">Home1</a>
-            <a href="home2.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C]">Home2</a>
+          <div id="homeMenu" class="hidden absolute mt-2 w-56 bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 transition-colors duration-300">
+            <a href="index.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C] font-serif text-base">Home1</a>
+            <a href="home2.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C] font-serif text-base">Home2</a>
           </div>
         </div>
-        <a href="about.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">About</a>
-        <a href="blog.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">Blog</a>
+        <a href="about.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">About</a>
+        <a href="blog.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">Blog</a>
 
-        <a href="shop.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">Shop</a>
-                <a href="collections.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">Collections</a>
+        <a href="shop.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">Shop</a>
+        <a href="collections.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">Collections</a>
 
-        <a href="contact.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">Contact</a>
+        <a href="contact.html" class="nav-link px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">Contact</a>
 
         <div class="relative">
-          <button id="dashBtn" class="flex items-center space-x-1 px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors">
+          <button id="dashBtn" class="flex items-center space-x-1 px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif text-base">
             Dashboards <i class="fas fa-chevron-down text-xs ml-1"></i>
           </button>
-          <div id="dashMenu" class="hidden absolute mt-2 w-48 bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 transition-colors duration-300">
-            <a href="user.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C]">User</a>
-            <a href="admin.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C]">Admin</a>
+          <div id="dashMenu" class="hidden absolute mt-2 w-56 bg-[#FFFFFF] dark:bg-[#1A1A1A] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 transition-colors duration-300">
+            <a href="user.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C] font-serif text-base">User Dashboard</a>
+            <a href="admin.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:bg-[#E8B4B8]/20 dark:hover:bg-gray-800 hover:text-[#7A1E2C] font-serif text-base">Admin Dashboard</a>
           </div>
         </div>
       </div>
 
-      <div class="flex items-center space-x-4 rtl:space-x-reverse">
-        
-        <button id="rtlToggle" class="hidden xl:block text-sm font-semibold px-3 py-1 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-[#7A1E2C] rounded border border-transparent dark:border-[#7A1E2C]/50 hover:border-[#7A1E2C] transition-all duration-300">
-          RTL
-        </button>
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+   
+       <button id="rtlToggle" class="hidden xl:flex items-center justify-center text-sm font-serif font-semibold px-4 py-2 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-white rounded-lg border border-transparent dark:border-[#7A1E2C]/50 hover:border-[#7A1E2C] transition-all duration-300">
+  RTL
+</button>
 
-        <button id="darkToggle" class="hidden xl:flex items-center justify-center w-10 h-10 rounded-full bg-[#FFFFFF] dark:bg-[#2A2A2A] hover:bg-[#FDE8E9] dark:hover:bg-gray-700 transition-all duration-300 overflow-hidden shadow-sm">
-          <i id="darkIcon" class="fas fa-moon text-xl text-[#7A1E2C] transition-all duration-500 transform"></i>
-        </button>
+<button id="darkToggle" class="hidden xl:flex items-center justify-center px-4 py-1 bg-[#FFFFFF] dark:bg-[#2A2A2A] rounded-lg border border-transparent dark:border-[#7A1E2C]/50 hover:border-[#7A1E2C] transition-all duration-300 overflow-hidden">
+  <i id="darkIcon" class="fas fa-moon text-2xl text-[#7A1E2C] transition-all duration-500 transform"></i>
+</button>
         
-        <a href="login.html" class="hidden xl:block px-5 py-2 bg-[#7A1E2C] hover:bg-[#5A1620] text-[#FFFFFF] font-medium rounded-lg transition-colors shadow-sm">
+        <a href="login.html" class="hidden xl:block px-6 py-2.5 bg-[#7A1E2C] hover:bg-[#5A1620] text-[#FFFFFF] font-serif font-medium rounded-lg transition-colors shadow-lg shadow-[#7A1E2C]/20 text-base">
           Login
         </a>
 
-        <a href="signup.html" class="hidden xl:block px-5 py-2 bg-[#FFFFFF] dark:bg-transparent dark:border dark:border-[#7A1E2C] hover:bg-[#7A1E2C] dark:hover:bg-[#7A1E2C] text-[#1A1A1A] dark:text-[#7A1E2C] hover:text-[#FFFFFF] dark:hover:text-[#FFFFFF] font-medium rounded-lg transition-colors shadow-sm">
+        <a href="signup.html" class="hidden xl:block px-6 py-2.5 bg-[#FFFFFF] dark:bg-transparent dark:border dark:border-[#7A1E2C] hover:bg-[#7A1E2C] dark:hover:bg-[#7A1E2C] text-[#1A1A1A]  dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-white hover:text-[#FFFFFF] dark:hover:text-[#FFFFFF] font-serif font-medium rounded-lg transition-colors shadow-sm text-base">
           Sign Up
         </a>
 
-        <button id="mobileBtn" class="xl:hidden text-2xl text-[#1A1A1A] dark:text-[#7A1E2C] transition-colors">
+        <button id="mobileBtn" class="xl:hidden text-3xl text-[#1A1A1A] dark:text-[#7A1E2C] transition-colors">
           <i id="mobileIcon" class="fas fa-bars"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobileMenu" class="xl:hidden hidden flex flex-col space-y-2 py-4 border-t border-[#FFFFFF]/30 dark:border-gray-700">
+    <div id="mobileMenu" class="xl:hidden hidden flex flex-col space-y-4 py-6 border-t border-[#FFFFFF]/30 dark:border-gray-700">
       
       <div class="relative">
-        <button id="mobileHomeBtn" class="w-full flex items-center justify-between px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">
+        <button id="mobileHomeBtn" class="w-full flex items-center justify-between px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">
           <span>Home</span>
           <i id="mobileHomeIcon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
         </button>
         <div id="mobileHomeMenu" class="hidden mt-1 ml-4 w-full rounded-lg py-2 border-l-2 border-[#7A1E2C]">
-          <a href="index.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors">Home1</a>
-          <a href="home2.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors">Home2</a>
+          <a href="index.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors font-serif text-base">Home1</a>
+          <a href="home2.html" class="home-link block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors font-serif text-base">Home2</a>
         </div>
       </div>
-      <a href="about.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">About</a>
-      <a href="blog.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">Blog</a>
+      <a href="about.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">About</a>
+      <a href="blog.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">Blog</a>
 
-      <a href="shop.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">Shop</a>
-            <a href="collections.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">Collections</a>
+      <a href="shop.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">Shop</a>
+            <a href="collections.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">Collections</a>
 
-            <a href="contact.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">Contact</a>
+            <a href="contact.html" class="px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">Contact</a>
 
       <div class="relative">
-        <button id="mobileDashBtn" class="w-full flex items-center justify-between px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-medium">
+        <button id="mobileDashBtn" class="w-full flex items-center justify-between px-3 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] transition-colors font-serif font-medium text-base">
           <span>Dashboards</span>
           <i id="mobileDashIcon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
         </button>
         <div id="mobileDashMenu" class="hidden mt-1 ml-4 w-full rounded-lg py-2 border-l-2 border-[#7A1E2C]">
-          <a href="user.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors">User</a>
-          <a href="admin.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors">Admin</a>
+          <a href="user.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors font-serif text-base">User</a>
+          <a href="admin.html" class="block px-4 py-2 text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-[#7A1E2C] rounded transition-colors font-serif text-base">Admin</a>
         </div>
       </div>
 
-      <div class="flex flex-col space-y-3 pt-4 border-t border-[#FFFFFF]/30 dark:border-gray-700">
-        <a href="login.html" class="px-4 py-2 bg-[#7A1E2C] hover:bg-[#5A1620] text-[#FFFFFF] font-medium rounded-lg text-center transition-colors shadow-sm">
+      <div class="flex flex-col space-y-4 pt-6 border-t border-[#FFFFFF]/30 dark:border-gray-700">
+        <a href="login.html" class="px-4 py-3 bg-[#7A1E2C] hover:bg-[#5A1620] text-[#FFFFFF] font-serif font-medium rounded-lg text-center transition-colors shadow-lg shadow-[#7A1E2C]/20 text-base">
           Login
         </a>
-        <a href="signup.html" class="px-4 py-2 bg-[#FFFFFF] dark:bg-transparent dark:border dark:border-[#7A1E2C] text-[#1A1A1A] dark:text-[#7A1E2C] hover:bg-[#7A1E2C] dark:hover:bg-[#7A1E2C] hover:text-[#FFFFFF] dark:hover:text-[#FFFFFF] font-medium rounded-lg text-center transition-all shadow-sm">
+        <a href="signup.html" class="px-4 py-3 bg-[#FFFFFF] dark:bg-transparent dark:border dark:border-[#7A1E2C] text-[#1A1A1A] dark:text-[#7A1E2C] hover:bg-[#7A1E2C] dark:hover:bg-[#7A1E2C] hover:text-[#FFFFFF] dark:hover:text-[#FFFFFF] font-serif font-medium rounded-lg text-center transition-all shadow-sm text-base">
           Sign Up
         </a>
         
         <div class="flex space-x-2 mt-4">
-          <button id="mobileRtlToggle" class="flex-1 text-sm font-semibold px-3 py-2 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-[#7A1E2C] rounded hover:border-[#7A1E2C] transition-colors border border-transparent dark:border-[#7A1E2C]/50">
+          <button id="mobileRtlToggle" class="flex-1 text-sm font-serif font-semibold px-3 py-3 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-[#7A1E2C] rounded-lg hover:border-[#7A1E2C] transition-colors border border-transparent dark:border-[#7A1E2C]/50">
             RTL
           </button>
-          <button id="mobileDarkToggle" class="flex-1 flex justify-center items-center text-sm font-semibold px-3 py-2 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-[#7A1E2C] rounded hover:border-[#7A1E2C] transition-colors border border-transparent dark:border-[#7A1E2C]/50">
-            <i id="mobileDarkIcon" class="fas fa-moon mr-2 transition-all duration-500 transform"></i> Theme
+          <button id="mobileDarkToggle" class="flex-1 flex justify-center items-center text-sm font-serif font-semibold px-3 py-3 bg-[#FFFFFF] dark:bg-[#2A2A2A] text-[#1A1A1A] dark:text-[#7A1E2C] rounded-lg hover:border-[#7A1E2C] transition-colors border border-transparent dark:border-[#7A1E2C]/50">
+            <i id="mobileDarkIcon" class="fas fa-moon mr-2 text-base transition-all duration-500 transform"></i> Theme
           </button>
         </div>
       </div>
